@@ -10,8 +10,6 @@ export class HashReadableStream extends Readable {
     try {
       if (!this.results.length) {
         this.push(null);
-        this.destroy();
-
         return;
       }
 

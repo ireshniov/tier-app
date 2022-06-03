@@ -25,4 +25,4 @@ COPY . .
 
 COPY --from=development /usr/src/tier-app/dist ./dist
 
-CMD ["node", "dist/http-server"]
+CMD ["node", "dist/src/http-server"]

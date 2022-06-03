@@ -40,7 +40,7 @@ services:
      environment:
        - REDIS_HOSTS=local:redis:6379:1
      ports:
-       - 16379:16379
+       - 8081:8081
      networks:
        - tier
      depends_on:
