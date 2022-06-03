@@ -1,20 +1,15 @@
 import { INestApplicationContext } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
 import {
-  CronKeyGeneratorRefreshCachedHashModule,
+  KeyGeneratorModule,
   KeyGeneratorService,
   LoggerService,
 } from '../module';
 
 (async (): Promise<void> => {
-  const logger: LoggerService = new LoggerService(
-    CronKeyGeneratorRefreshCachedHashModule.name,
-  );
+  const logger: LoggerService = new LoggerService(KeyGeneratorService.name);
   const app: INestApplicationContext =
-    await NestFactory.createApplicationContext(
-      CronKeyGeneratorRefreshCachedHashModule,
-      { logger },
-    );
+    await NestFactory.createApplicationContext(KeyGeneratorModule, { logger });
 
   await app.init();
 

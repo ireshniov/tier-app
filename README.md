@@ -18,13 +18,13 @@ $ docker exec -w /usr/src/tier-app tier-app npm run migration:run:dev
 ## Seed hashes
 
 ```bash
-$ docker exec -w /usr/src/tier-app tier-app npm run worker:key-generator-seed-not-used-hash:dev
+$ docker exec -w /usr/src/tier-app tier-app npm run worker:seed-not-used-hash:dev
 ```
 
 ## Cache hashes
 
 ```bash
-$ docker exec -w /usr/src/tier-app tier-app npm run worker:key-generator-refresh-cached-hash:dev
+$ docker exec -w /usr/src/tier-app tier-app npm run worker:refresh-cached-hash:dev
 ```
 
 ## Use the app
@@ -43,17 +43,6 @@ $ curl --request POST '127.0.0.1:3000' \
 
 ```bash
 $ curl --request GET '127.0.0.1:3000/rqE'
-```
-
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
 ## Test

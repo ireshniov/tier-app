@@ -26,10 +26,10 @@
     "migration:run": "npm run typeorm:cli -- migration:run",
     "typeorm:cli:dev": "ts-node -T -r dotenv-safe/config ./node_modules/typeorm/cli.js -f src/config/ormconfig.ts -c default",
     "typeorm:cli": "node --gc_interval=100 ./node_modules/typeorm/cli.js -f dist/src/config/ormconfig.js -c default",
-    "worker:key-generator-refresh-cached-hash": "node --gc_interval=100 -r ./node_modules/reflect-metadata/Reflect.js dist/src/worker/KeyGeneratorRefreshCachedHashWorker.js",
-    "worker:key-generator-refresh-cached-hash:dev": "ts-node -T -r ./node_modules/reflect-metadata/Reflect.js -r dotenv-safe/config src/worker/KeyGeneratorRefreshCachedHashWorker.ts",
-    "worker:key-generator-seed-not-used-hash": "node --gc_interval=100 -r ./node_modules/reflect-metadata/Reflect.js dist/src/worker/KeyGeneratorSeedNotUsedHashWorker.js",
-    "worker:key-generator-seed-not-used-hash:dev": "ts-node -T -r ./node_modules/reflect-metadata/Reflect.js -r dotenv-safe/config src/worker/KeyGeneratorSeedNotUsedHashWorker.ts"
+    "worker:refresh-cached-hash": "node --gc_interval=100 -r ./node_modules/reflect-metadata/Reflect.js dist/src/worker/RefreshCachedHashWorker.js",
+    "worker:refresh-cached-hash:dev": "ts-node -T -r ./node_modules/reflect-metadata/Reflect.js -r dotenv-safe/config src/worker/RefreshCachedHashWorker.ts",
+    "worker:seed-not-used-hash": "node --gc_interval=100 -r ./node_modules/reflect-metadata/Reflect.js dist/src/worker/SeedNotUsedHashWorker.js",
+    "worker:seed-not-used-hash:dev": "ts-node -T -r ./node_modules/reflect-metadata/Reflect.js -r dotenv-safe/config src/worker/SeedNotUsedHashWorker.ts"
   },
   "dependencies": {
     "@nestjs/common": "8.0.0",

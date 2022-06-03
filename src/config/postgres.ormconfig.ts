@@ -7,7 +7,7 @@ import { Visit } from '../module/visit/entity/Visit';
 import { DEFAULT_CONNECTION_NAME } from '@nestjs/typeorm/dist/typeorm.constants';
 
 const isDevEnv: boolean = 'development' === process.env.NODE_ENV;
-const basePath: string = isDevEnv && process.env.TS_NODE ? 'src' : 'dist/';
+const basePath: string = isDevEnv && process.env.TS_NODE ? '' : 'dist/';
 
 export const postgres: PostgresConnectionOptions = {
   name: DEFAULT_CONNECTION_NAME,
@@ -18,12 +18,12 @@ export const postgres: PostgresConnectionOptions = {
   synchronize: false,
   logging:
     process.env.DB_LOGGING === 'true' ? true : (process.env.DB_LOGGING as any),
-  migrations: [`${basePath}/migration/postgres/*{.ts,.js}`],
+  migrations: [`${basePath}/src/migration/postgres/*{.ts,.js}`],
   migrationsTableName: 'migrations',
   migrationsTransactionMode: 'each',
   migrationsRun: false,
   cli: {
-    migrationsDir: `${basePath}/migration/postgres`,
+    migrationsDir: `${basePath}/src/migration/postgres`,
   },
   namingStrategy: new SnakeNamingStrategy(),
 };
